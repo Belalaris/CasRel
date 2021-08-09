@@ -12,7 +12,7 @@ torch.manual_seed(seed)
 parser = argparse.ArgumentParser(description='Model Controller')
 parser.add_argument('--lr', type=float, default=1e-5, help='learning rate')
 parser.add_argument('--batch_size', type=int, default=8)
-parser.add_argument('--max_epoch', type=int, default=50)
+parser.add_argument('--max_epoch', type=int, default=25)
 parser.add_argument('--max_len', type=int, default=300)
 parser.add_argument('--dataset', default='duie', type=str, help='define your own dataset names')
 parser.add_argument("--bert_name", default='bert-chinese-wwm', type=str, help='choose pretrained bert name')
@@ -32,7 +32,7 @@ if __name__ == '__main__':
     rel_vocab = load_rel(con.rel_path)
 
     # load checkpoint weight
-    # path = "./saved_weights/duie/.pkl"
+    # path = "./saved_weights/duie/epoch_25_duie_model.pkl"
     # if os.path.exists(path):
     #     print("-" * 5 + "Begin Loading Model" + "-" * 5)
     #     checkpoint = torch.load(path)

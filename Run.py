@@ -14,7 +14,7 @@ seed = 226
 torch.manual_seed(seed)
 
 parser = argparse.ArgumentParser(description='Model Controller')
-parser.add_argument('--lr', type=float, default=5e-6, help='learning rate')
+parser.add_argument('--lr', type=float, default=1e-5, help='learning rate')
 parser.add_argument('--batch_size', type=int, default=8)
 parser.add_argument('--max_epoch', type=int, default=25)
 parser.add_argument('--max_len', type=int, default=300)

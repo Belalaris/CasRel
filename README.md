@@ -35,7 +35,7 @@ And then 'dev' dataset is for no use since callback does not influence the train
 
 ## Baidu
 
-I preprocessed the open-source dataset from Baidu. I did some cleaning, so the data given have 18 relation types. 
+I preprocessed the open-source dataset from Baidu. I did some cleaning, and the data given have **18 relation types**. 
 Some noisy data are eliminated.
 
 The data are in form of json. Take one as an example:
@@ -65,8 +65,8 @@ Some basic statistics:
 
 ## DuIE
 
-Baidu dataset is actually a part of DuIE, so if you want to get a better model, choose this larger dataset for training. 
-The data structure is the same as that of Baidu.
+Baidu dataset is actually a part of DuIE, so if you want to get a better model, choose this larger dataset for training. The data given have **48 relation types**.
+The data structure is the same as that in Baidu dataset.
 
 I also did some statistics:
 
@@ -113,7 +113,7 @@ Input a single sentence, and the corresponding output will be in form of json:
 }
 ```
 
-<img src="C:\Users\pc\AppData\Roaming\Typora\typora-user-images\image-20210804160443578.png" alt="image-20210804160443578">
+<img src="./image/test_record.png">
 
 
 # Results
@@ -144,8 +144,8 @@ It may not reach its utmost since there is only 30 epochs.
 
 # Experiences
 - Learning rate 1e-5 seems a good choice. If you change the learning rate, the model will be dramatically affected.
-- It shows little improvement when I substitute BERT with RoBERTa.
 - It is crucial to shuffle the datasets in order to avoid overfitting. 
 - Do not set the batch size too big/small, 8 is OK. Or the model will be affected to some extent/difficult to converge.
+- There is no pytorch_model.bin file in bert-chinese-wwm directory since it is a little large, remember to download it.
 - When training with GPUs, pay attention to the device setting in Run.py, model/data.py, model/evaluate.py.
 - Remember to change the name of .pkl of checkpoints and choose the right one for loading.
